@@ -1,0 +1,43 @@
+package com.singleton;
+
+class LazyInitializedSingleton {
+
+    private static LazyInitializedSingleton instance;
+    
+    private LazyInitializedSingleton(){}
+    
+    public static LazyInitializedSingleton getInstance(){
+        if(instance == null){
+            instance = new LazyInitializedSingleton();
+        }
+        return instance;
+    }
+}
+class hello
+{
+	
+}
+public class LazyInitializedSingletonPrg {
+  public static void main(String[] args) {
+	//  LazyInitializedSingleton obj=new LazyInitializedSingleton();
+	
+	  LazyInitializedSingleton h1=LazyInitializedSingleton.getInstance();
+	  System.out.println(h1.hashCode());
+	  
+	  LazyInitializedSingleton h2=LazyInitializedSingleton.getInstance();
+	  System.out.println(h2.hashCode());
+	  
+	  System.out.println("-------------");
+	  hello obj1=new hello();
+	  System.out.println(obj1.hashCode());
+	  
+	  hello obj2=new hello();
+	  System.out.println(obj2.hashCode());
+	  
+	  System.out.println(obj1==obj2);
+	  System.out.println(obj1.equals(obj2));
+	  System.out.println("++++++++++++++");
+	  System.out.println(h1==h2);
+	  System.out.println(h1.equals(h2));
+}
+}
